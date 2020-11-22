@@ -3,7 +3,7 @@
 |                               | | [str] is a text value and    | |                              |
 |      Created by @nattadasu    | |   number                     | |   // is an important notes   |
 |                               | | [num] is a only-number value | |    # is a definition notes   |
-| -------VERSION:  1.3-r------- | | [boo] is a boolean markup    | |                              |
+| -------VERSION:  1.4-b------- | | [boo] is a boolean markup    | |                              |
 |                               | |   Consisted by "true" and    | \⋆----------------------------⋆/
 | Targeted on accessibility for | |   "false" value              | /⋆------ADDITIONAL NOTES------⋆\
 |   non-developer to contribute | | [arr] is an array value. It  | |                              |
@@ -252,108 +252,31 @@
       ]
     }
 
-    # type [obj] <nbl> => [str] <nbl>
-    # = Serial type, is it TV, ONA, OVA/OAD, Special, or Movie
-    type:
-    {
-      // Allowed values are:
-      // TV, ONA, OVA, OAD, Special, Movie, Music, and Unknown
-      en_US: 
+    # type [num] <nbl>
+    # = Serial type, is it TV, ONA, OVA/OAD, Special, or Movie. See Documentation.
+    type: 0
 
-      // Allowed values are:
-      // Serial TV, ONA, OVA, OAD, Spesial, Film, Musik, and Tidak Diketahui
-      id_ID: 
-    }
+    # status [num] <nbl>
+    # = Describes the serial broadcast status. See Documentation.
+    status: 0
 
-    # status [obj] > [str] <nbl>
-    # = Describes the serial broadcast status.
-    status:
-    {
-      // Allowed values are:
-      // Aired, Airing, Planned, TBA, and Unknown
-      en_US: 
-
-      // Allowed values are:
-      // Ditayangkan, Mengudara, Direncanakan, Akan Diumumkan, and Tidak Diketahui
-      id_ID: 
-    }
-
-    # serialGenre [obj]
+    # serialGenre [arr] <nab> > [num]
     # = Is genre(s) of serial. See the wiki for more information.
-    serialGenre:
-    {
-      # en_US [arr] <nbl>
-      # = Serial genre in English.
-      //  Allowed values are:
-      //  Action, Adventure, Comedy, Crime, Documentary, Drama, Fantasy, History, Horror, Mature,
-      //  Music, Mystery, Psychological, Romance, Science Fiction, Slice of Life, Sport,
-      //  Supernatural, Thriller, War
-      en_US:
-      [
-        
-      ]
+    serialGenre: [
 
-      # id_ID [arr] <nbl>
-      # = Serial genre in Indonesian.
-      //  Allowed values are:
-      //  Aksi, Petualangan, Komedi, Kriminalitas, Dokumentasi, Drama, Fantasi, Sejarah, Horror,
-      //  Dewasa, Musik, Misteri, Psikologis, Romansa, Fiksi Ilmiah, Potongan Kehidupan,
-      //  Olahraga, Supernatural, Thriller, Peperangan
-      id_ID:
-      [
-        
-      ]
-    }
+    ]
 
-    # serialTags [obj]
+    # serialTags [arr] <nab> > [num]
     # = Represents serial specific tags/content. Similar to the serialGenre, but usually more 
     #   focused on content, storyline, or themes. But, all of serialGenres value will be ignored if 
     #   present on serialTags. See the wiki for more information.
-    serialTags:
-    {
-      # en_US [arr] <nbl>
-      # = Serial tags in English.
-      en_US:
-      [
+    serialTags: [
 
-      ]
+    ]
 
-      # id_ID [arr] <nbl>
-      # = Serial tags in Indonesian.
-      id_ID:
-      [
-        
-      ]
-    }
-
-    # releaseSeason [obj] <nbl> => [str] <nbl>
-    # = Season of serial releases.
-    releaseSeason:
-    {
-      // Allowed values are
-      // Winter, Spring, Summer, Fall, and Unknown
-      en_US: 
-
-      // Allowed values are
-      // Dingin, Semi, Panas, Gugur, and Tidak Diketahui
-      id_ID: 
-
-      // Allowed values are
-      // 冬, 春, 夏, 秋, and 不明
-      ja_JP: 
-
-      // Allowed values are
-      // 겨울, 봄, 여름, 가을, and 알
-      ko_KR: 
-
-      // Allowed values are
-      // 冬天, 春天, 夏天, 秋天, and 未知
-      zh_Hans: 
-
-      // Allowed values are
-      // 冬天, 春天, 夏天, 秋天, and 未知
-      zh_Hant: 
-    }
+    # releaseSeason [num] <nbl>
+    # = Season of serial releases. See Documentation.
+    releaseSeason: 0
 
     # releaseYear [num] <nbl>
     # = The year of the serial release, using a integrer/numeral format.
@@ -363,11 +286,11 @@
     # = Total episodes of serial. If unknown, fill null.
     episode: 0
 
-    # releaseDate [str]
+    # releaseDate [str] <nab>
     # = Start date of serial release, using YYYY-MM-DD format. If unknown, fill null.
     releaseDate: 
 
-    # endDate [str]
+    # endDate [str] <nab>
     # = End date of serial release, using YYYY-MM-DD format. If unknown, fill null.
     endDate: 
 
@@ -383,10 +306,11 @@
     # = Studio producing series.
     studio: 
 
-    # rating [str] <nab>
+    # rating [num] <nbl>
     # = Broadcast content rating of serial. See the wiki for more information.
-    // Allowed values are: G0+, PS2+, PG7+, PG13+, R18+, GU21+, and null.
-    rating: 
+    // Allowed values are: G0+, PS2+, PG7+, PG13+, R18+, GU21+, and unknown.
+    // See Documentation.
+    rating: 0
 
     # isNsfw [boo] <nbl>
     # = Is a marker when the serial is Not Safe for Work (NSFW). The initial preset is false, 
@@ -394,28 +318,16 @@
     //  Allowed values are "true" and "false"
     isNsfw: false
 
-    # adaptation [obj] > [str] <arb> <nab>
-    # = Is the original adaptation of the show.
-    adaptation:
-    {
-      // Allowed values are:
-      //   Original, Comic, Manga, Manhwa, Manhua, Webtoon, Doujin, Novel, Game, Music, Drama,
-      //   4-koma, Fairy Tale, and null
-      en_US: 
+    # adaptation [arr] <nab> > [num]
+    # = Is the original adaptation of the show. See Documentation.
+    adaptation: [
 
-      // Allowed values are:
-      //   Orisinal, Komik, Manga, Manhwa, Manhua, Webtoon, Doujin, Novel, Gim, Musik, Drama, 
-      //   4-panel, Dongeng, and null
-      id_ID: 
-    }
+    ]
 
     # country [str] <nbl>
-    # = Country of origin of serial. There are no country restrictions here.
-    country:
-    {
-      en_US: 
-      id_ID: 
-    }
+    # = Country of origin of serial. There are no country restrictions here. Using ISO 
+    #   3166-1 alpha-2.
+    country: 
 
     # officialWebsite [str] <url> <nab>
     # = Links to official website of current entry.
@@ -513,7 +425,11 @@
       # code [str] <nab>
       # = Similar to ID, but the only difference is there is an additional identification character
       #   that used by IMDB.
-      code: 
+      code: tt
+
+      # seasonCode [str] <nab>
+      # = Similar to score.IMDb.code, but this will define the season.
+      seasonCode: tt
       score: 0
     }
 
@@ -523,7 +439,9 @@
       # id [num]
       # = Is a serial id on the respective website. Can be taken from URL, or inspecting via poster
       #   image URI. See Wiki or ask to developer for more information.
-      id: 0
+      showId: 0
+
+      season: 1
       score: 0
     }
 
@@ -564,10 +482,12 @@
     // https://en.myshows.me/
     MyShows:
     {
-      # id [num]
+      # showId [num]
       # = Is a serial id on the respective website. Can be taken from URL, or inspecting via poster
       #   image URI. See Wiki or ask to developer for more information.
-      id: 0
+      showId: 0
+
+      season: 1
       score: 0
     }
 
@@ -620,20 +540,22 @@
       # isAnime [boo] <nbl>
       # = Explain that url is using /anime path or not. Default: true.
       isAnime: true
+
+      // USE THIS IF isAnime IS SET TO FALSE
+      //season: 1
       score: 0
     }
 
     // https://www.themoviedb.org/
     TMDB:
     {
-      # url [str] <url>
-      # = URL of entry on the related website.
-      url: 
-
       # id [num]
       # = Is a serial id on the respective website. Can be taken from URL, or inspecting via poster
       #   image URI. See Wiki or ask to developer for more information.
-      id: 0
+      showId: 0
+
+      season: 1
+      seasonId: 0
       score: 0
     }
 
@@ -647,7 +569,10 @@
       # id [num]
       # = Is a serial id on the respective website. Can be taken from URL, or inspecting via poster
       #   image URI. See Wiki or ask to developer for more information.
-      id: 0
+      showId: 0
+
+      season: 1
+      seasonId: 0
       score: 0
     }
 
@@ -657,7 +582,9 @@
       # id [num]
       # = Is a serial id on the respective website. Can be taken from URL, or inspecting via poster
       #   image URI. See Wiki or ask to developer for more information.
-      id: 0
+      showId: 0
+
+      season: 1
       score: 0
     }
   }
