@@ -1,0 +1,27 @@
+# GLOBAL
+*.wiki                              @ryuuganime
+index-template.json                 @ryuuganime
+LICENSE                             @ryuuganime
+templates/                          @ryuuganime
+.github/                            @ryuuganime
+.vscode/ryuuganime.code-snippets    @ryuuganime
+
+# Entries 000001-000999
+/*/000/001.*                               @nattadasu
+/*/000/002.*                               @Yae-chan @nattadasu
+/*/000/003.*                               @nattadasu
+/*/000/004.*                               @nattadasu
+/*/000/005.*                               @nattadasu
+/*/000/006.*                               @nattadasu
+/*/000/007.*                               @nattadasu
+/*/000/008.*                               @nattadasu
+/*/000/009.*                               @YamashitaKazuhito
+/*/000/010.*                               @nattadasu
+/*/000/011.*                               @YamashitaKazuhito
+/*/000/012.*                               @YamashitaKazuhito
+/*/000/013.*                               @YamashitaKazuhito
+/*/000/014.*                               @nattadasu
+/*/000/015.*                               @nattadasu
+/*/000/016.*                               @nattadasu
+/*/000/017.*                               @nattadasu
+/*/000/018.*                               @nattadasu
